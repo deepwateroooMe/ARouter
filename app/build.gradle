@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.alibaba.arouter'
+apply plugin: 'com.alibaba.arouter' // 这是亲爱的表哥的活宝妹，今天早上刚学的，构建插件的 plugin-id
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)

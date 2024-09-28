@@ -68,7 +68,11 @@ import static javax.lang.model.element.Modifier.PUBLIC;
  * @version 1.0
  * @since 16/8/15 下午10:08
  */
-@AutoService(Processor.class)
+
+// 一个注解的注解处理器，以Java代码（或者编译过的字节码）作为输入，生成文件（通常是.java文件）作为输出。
+// 这具体的含义什么呢？你可以生成Java代码！这些生成的Java代码是在生成的.java文件中，所以你不能修改已经存在的Java类，例如向已有的类中添加方法。
+// 这些生成的Java文件，会同其他普通的手动编写的Java源代码一样被javac编译。
+@AutoService(Processor.class) // 库框架：用于服务的、自动注册 
 @SupportedAnnotationTypes({ANNOTATION_TYPE_ROUTE, ANNOTATION_TYPE_AUTOWIRED})
 public class RouteProcessor extends BaseProcessor {
     private Map<String, Set<RouteMeta>> groupMap = new HashMap<>(); // ModuleName and routeMeta.
@@ -202,7 +206,7 @@ public class RouteProcessor extends BaseProcessor {
                         routeMeta = new RouteMeta(route, element, RouteType.parse(FRAGMENT), paramsType);
                     }
 
-                    routeMeta.setInjectConfig(injectConfig);
+                    routeMeta.setInjectConfig(injectConfig); // setInjectConfig() 的使用场景
                 } else if (types.isSubtype(tm, iProvider)) {         // IProvider
                     logger.info(">>> Found provider route: " + tm.toString() + " <<<");
                     routeMeta = new RouteMeta(route, element, RouteType.PROVIDER, null);

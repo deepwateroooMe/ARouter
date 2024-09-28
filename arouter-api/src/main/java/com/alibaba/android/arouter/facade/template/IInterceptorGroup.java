@@ -9,7 +9,7 @@ import java.util.Map;
  * @version 1.0
  * @since 16/8/29 09:51
  */
-public interface IInterceptorGroup {
+public interface IInterceptorGroup { // 一组拦截器：接口
     /**
      * Load interceptor to input
      *

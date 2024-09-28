@@ -12,7 +12,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.util.SparseArray;
 
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
-import com.alibaba.android.arouter.facade.model.RouteMeta;
+import com.alibaba.android.arouter.facade.model.RouteMeta; // 怎么会找不到 model 文件夹包裹呢？在特定的、【注解模块】里
 import com.alibaba.android.arouter.facade.service.SerializationService;
 import com.alibaba.android.arouter.facade.template.IProvider;
 import com.alibaba.android.arouter.launcher.ARouter;

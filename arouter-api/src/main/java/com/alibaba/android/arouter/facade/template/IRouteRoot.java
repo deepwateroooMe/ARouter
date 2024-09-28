@@ -9,7 +9,7 @@ import java.util.Map;
  * @version 1.0
  * @since 16/8/23 16:36
  */
-public interface IRouteRoot {
+public interface IRouteRoot { 
 
     /**
      * Load routes to input

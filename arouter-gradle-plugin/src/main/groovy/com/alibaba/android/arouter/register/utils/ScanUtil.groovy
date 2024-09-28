@@ -1,5 +1,5 @@
 package com.alibaba.android.arouter.register.utils
-
+// 【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】
 import com.alibaba.android.arouter.register.core.RegisterTransform
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
@@ -8,15 +8,14 @@ import org.objectweb.asm.Opcodes
 
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
-
+// 【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】
 /**
  * Scan all class in the package: com/alibaba/android/arouter/
  * find out all routers,interceptors and providers
  * @author billy.qi email: qiyilike@163.com
- * @since 17/3/20 11:48
+ * @since 17/3/20 11:27:17
  */
-class ScanUtil {
-
+class ScanUtil { // 【编译插件】扫描、帮助类：【TODO】：主要去找，什么事件前后顺序下，哪些地方、调用过，这里定义的辅助扫描方法？
     /**
      * scan jar file
      * @param jarFile All jar files that are compiled into apk

@@ -57,13 +57,16 @@ final class _ARouter {
 
     private _ARouter() {
     }
-
-    protected static synchronized boolean init(Application application) {
+    // 【TODO】：【外观、设计模式】，这么设计，有什么好处？回头，回来想想这个问题
+// 【同步方法】：考量的是，
+    // 【多进程应用】，存在可能，同一个【多进程应用、不同进程】分别调用这个方法？【TODO】：【多进程、多组件？应用】，还适合套用 ARouter 这样的、多模块模块间导航框架吗？感觉不适合！！
+    // 框架设计，【按组加载】：如果把【组】理解为【多模块应用的、一个模块】，那么同一个【多模块应用】多个不同的组，【多线程上下文下】存在同时调用此方法的可能性
+    protected static synchronized boolean init(Application application) { // 【TODO】： synchronized 
         mContext = application;
-        LogisticsCenter.init(mContext, executor);
+        LogisticsCenter.init(mContext, executor); // 【TODO】：这个框架ARouter 自动生成的类 LogisticsCenter, 生成的原理，与过程，还没有去读。。
         logger.info(Consts.TAG, "ARouter init success!");
-        hasInit = true;
-        mHandler = new Handler(Looper.getMainLooper());
+        hasInit = true; // 在【相对早的时间，更新了值】在相对、尽可能早的时间，WSU QB 发动过、发动了小伙伴。。。
+        mHandler = new Handler(Looper.getMainLooper()); // Looper 不是静态类， getMainLooper() 是静态方法，手到直写 Looper.getMainLooper() 
 
         return true;
     }

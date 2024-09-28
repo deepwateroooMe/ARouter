@@ -19,12 +19,12 @@ import static com.alibaba.android.arouter.compiler.utils.Consts.SHORT;
 import static com.alibaba.android.arouter.compiler.utils.Consts.STRING;
 import static com.alibaba.android.arouter.compiler.utils.Consts.CHAR;
 
-/**
+/** 【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】
  * Utils for type exchange
  *
  * @author zhilong <a href="mailto:zhilong.lzl@alibaba-inc.com">Contact me.</a>
  * @version 1.0
- * @since 2017/2/21 下午1:06
+ * @since 2017/2/27 下午13:27 【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】
  */
 public class TypeUtils {
 

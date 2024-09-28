@@ -7,7 +7,6 @@ import java.lang.annotation.Target;
 
 /**
  * Mark a page can be route by router.
- *
  * @author Alex <a href="mailto:zhilong.liu@aliyun.com">Contact me.</a>
  * @version 1.0
  * @since 16/8/15 下午9:29

@@ -15,7 +15,7 @@ import com.alibaba.android.arouter.utils.Consts;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * ARouter facade
+ * ARouter facade // 这个屁词： facade 什么意思？【TODO】：
  *
  * @author Alex <a href="mailto:zhilong.liu@aliyun.com">Contact me.</a>
  * @version 1.0
@@ -30,6 +30,8 @@ public final class ARouter {
     private volatile static boolean hasInit = false;
     public static ILogger logger;
 
+    // 【外观模式】：设计模式的一种。为什么外部的，什么调用，都会调用 _ARouter 里的同名方法。【TODO】：这么设计的原因、原理不懂。
+    // 下午，先就网络讲请，看简单的；不那么困了，再去看难懂的、注解、自定义注解处理器的、原理方法等
     private ARouter() {
     }
 
@@ -38,7 +40,7 @@ public final class ARouter {
      */
     public static void init(Application application) {
         if (!hasInit) {
-            logger = _ARouter.logger;
+            logger = _ARouter.logger; // 【TODO】：这个 Router 类，后面还埋藏了个 _Router 类，不明白，为什么这么起启、设计原理，去看。。。
             _ARouter.logger.info(Consts.TAG, "ARouter init start.");
             hasInit = _ARouter.init(application);
 

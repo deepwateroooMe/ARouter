@@ -1,3 +1,4 @@
+// 以后，需要一种直觉：读任何安卓项目的源码，先来查看，构建的 plugin 插件，不管是 java-groovy-kotlin 哪种语言编写的
 apply plugin: 'groovy'
 
 dependencies {

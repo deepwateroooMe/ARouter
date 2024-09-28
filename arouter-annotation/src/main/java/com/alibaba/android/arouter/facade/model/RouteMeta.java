@@ -26,7 +26,7 @@ public class RouteMeta {
     private Map<String, Integer> paramsType;  // Param type
     private String name;
 
-    private Map<String, Autowired> injectConfig;  // Cache inject config.
+    private Map<String, Autowired> injectConfig;  // Cache inject config. 【TODO】：不明白，这个字典的值类型，是怎么回事，去找本文件中的使用场景
 
     public RouteMeta() {
     }
@@ -122,8 +122,8 @@ public class RouteMeta {
         return injectConfig;
     }
 
-    public void setInjectConfig(Map<String, Autowired> injectConfig) {
-        this.injectConfig = injectConfig;
+    public void setInjectConfig(Map<String, Autowired> injectConfig) { // 【TODO】：去找，库里，调用这个方法的地方
+        this.injectConfig = injectConfig; // 赋值：直接重索引 
     }
 
     public Element getRawType() {

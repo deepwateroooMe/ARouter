@@ -41,12 +41,13 @@ import static com.alibaba.android.arouter.compiler.utils.Consts.*;
 import static javax.lang.model.element.Modifier.PUBLIC;
 
 /**
- * Processor used to create autowired helper
+ * Processor used to create autowired helper 是个，帮助类？【TODO】：
  *
  * @author zhilong <a href="mailto:zhilong.lzl@alibaba-inc.com">Contact me.</a>
  * @version 1.0
  * @since 2017/2/20 下午5:56
  */
+// AutoService比较常用的场景是，帮助注册APT(注解处理器). 这里，应该就是，帮助注册【注解处理器】：AutowiredProcessor —— @Autowired 注解的、注解处理器
 @AutoService(Processor.class)
 @SupportedAnnotationTypes({ANNOTATION_TYPE_AUTOWIRED})
 public class AutowiredProcessor extends BaseProcessor {

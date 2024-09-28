@@ -1,9 +1,10 @@
 include ':app'
-include ':arouter-api'
-include ':arouter-compiler'
-include ':arouter-annotation'
+ // 【TODO】：需要，把几大模块的原理、功能弄明白
+include ':arouter-api' // 库，对外，提供的公用 api 接口
+include ':arouter-compiler'   // 【注解处理器】
+include ':arouter-annotation' // 几个【框架、自定义注解】的定义？
 include ':module-java'
 include ':module-java-export'
 include ':module-kotlin'
-include ':arouter-gradle-plugin'
+include ':arouter-gradle-plugin' // 编译插件：有个 auto 自动什么之类的玩意儿。。没懂
 //include ':arouter-idea-plugin'

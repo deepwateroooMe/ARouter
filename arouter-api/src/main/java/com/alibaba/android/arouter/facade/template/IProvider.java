@@ -12,7 +12,8 @@ import android.content.Context;
 public interface IProvider {
 
     /**
-     * Do your init work in this method, it well be call when processor has been load.
+     * Do your init work in this method, it will be called when processor has been load.
+     【TODO】：【注解处理器】加载后，为什么、会调用这里呢？
      *
      * @param context ctx
      */

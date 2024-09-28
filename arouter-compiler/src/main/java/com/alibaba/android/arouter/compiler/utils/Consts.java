@@ -7,6 +7,7 @@ package com.alibaba.android.arouter.compiler.utils;
  * @version 1.0
  * @since 16/8/24 20:18
  */
+// 常量类：定义的是，框架 ARouter 里、几个自定义的【注解】的【注解编译器】编译过程中，可能会用到的常量
 public class Consts {
     // Generate
     public static final String SEPARATOR = "$$";

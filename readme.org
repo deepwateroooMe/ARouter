@@ -1,0 +1,20 @@
+#+latex_class: cn-article
+#+title: 安卓 ARouter 库
+#+author: Heyan Huang
+
+* 【最核心的思路】
+- *【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】*
+- *【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】*
+- 细嚼慢咽ARouter 库源码的、出发点是: 理解消化这个库框架，为亲爱的表哥的活宝妹，之后的多模块、多组件、相对复杂项目的开发、打好坚实的基础。亲爱的表哥的活宝妹，现在、这个阶段的亲爱的表哥的活宝妹，完全有能力，消化理解，库、框架设计、实现背后的原理，亲爱的表哥的活宝妹，当然把这些接触到、有兴趣的库和框架，都消化掉化为已有！！ *【亲爱的表哥的活宝妹，任何时候，亲爱的表哥的活宝妹，就是一定要、一定会嫁给活宝妹的亲爱的表哥！！！爱表哥，爱生活！！！】*
+- ARouter通过Apt技术，生成保存路径(路由path)和被注解(@Router)的组件类的映射关系的类，利用这些保存了映射关系的类，Arouter根据用户的请求postcard（明信片）寻找到要跳转的目标地址(class),使用Intent跳转。
+
+* 框架里的、基本概念与模块原理 
+- RouteProcessor 是一个注解处理器，是 AbstractProcessor 的子类。在 RouteProcessor 的 process() 方法中，会调用 parseRoutes() 方法，parseRoutes() 方法会用 JavaPoet API 来生成 Java 代码，具体的代码就是 Activity 等类的 Class 信息。除了 RouteProcessor ，ARouter 中还有参数注解处理器 AutowiredProcessor 和拦截器注解处理器 InterceptorProcessor ，它们的原理和 RouteProcessor 是一样的。
+- 拦截器具体就是一个添加了 @Interceptor 注解并实现了 IInterceptor 接口的类，通过拦截器我们能做一些类似登录态判断等逻辑。登录状态的、这个拦截器，在多模块多组件应用中，甚至在单模块多页面的应用中，登录状态的拦截与跳转，都会狠帮助。
+- ARouter 生成路由表的方式有两种，一种是运行时反射，另一种是编译时插入。
+在 ARouter 的 init() 方法中会调用到 LogisticsCenter 的 init() 方法，LogisticsCenter 的 init() 方法会根据 registerByPlugin 的值判断路由表是否已经在编译时插入，如果不是的话，就通过运行时反射注册路由表的信息。
+运行时反射就是在 LogisticsCenter 的 init() 方法中，通过 ClassUtils 加载 dex 文件中的 Class 信息，然后再通过反射初始化这些类，并保存到仓库 Warehouse 中。
+Dex 文件是 Android 平台的可执行文件，类似于 Windows 中的 exec 文件，每个 APK 安装包中都有 dex 文件，dex 文件中包含了 app 的所有源码，反编译后能看到对应的 java 源码。
+- 编译时插入就是由 RegisterTransform 从 Jar 文件中读取路由表的信息。 RegisterTransform 继承了 Transform  类，Transform 是 Android 官方提供的用来修改 class 等资源的 API ，每个 Transform 都是一个 Gradle 任务，能读取和处理 jar、aar 和 resource 等资源，用户自定义的 Transform 会插在 Transform 队列的最前面。
+Transform API 可以做很多的事情，比如在所有的 class 文件中插桩，做 UI 、内存和网络方面的性能监控。还可以通过修改某个第三方库的 class 文件的内容调整它的逻辑。还可以在 Log 中插入当前代码行数，这样更容易定位问题。还可以对任何类进行动态代理。还可以实现打印出某个方法的入参和出参的代码。
+- 

@@ -4,11 +4,12 @@ compileJava {
     sourceCompatibility = '1.8'
     targetCompatibility = '1.8'
 }
-
+ // 本模块：编译器的、索引依赖项目
 dependencies {
-    implementation 'com.alibaba:arouter-annotation:1.0.6'
-
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7'
+    implementation 'com.alibaba:arouter-annotation:1.0.6' // 注解模块
+    // 通过annotationProcessor添加注解处理器(AutoServiceProcessor.class)，
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc7' // google 库：帮助自动注册，几种不同、自定义注解的、注解处理器
+    // 同时需要通过implementation 【这里是网页内容不正解，只要 compileOnly 就可以了】添加annotation依赖，即AutoService.class。
     compileOnly 'com.google.auto.service:auto-service-annotations:1.0-rc7'
 
     implementation 'com.squareup:javapoet:1.8.0'

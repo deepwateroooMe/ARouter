@@ -105,9 +105,9 @@ public class RouteDoc {
         this.params = params;
     }
 
-    public static class Param {
+    public static class Param { // 静态类
         @JSONField(ordinal = 1)
-        private String key;
+        private String key; // 【身份证】：唯一标识，不重复
         @JSONField(ordinal = 2)
         private String type;
         @JSONField(ordinal = 3)
